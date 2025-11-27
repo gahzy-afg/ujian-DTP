@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Explorer - Discover Your Next Anime</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="code.js" defer></script>
+   
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="logo">Anime<span>Explorer</span></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Discover Your Next Anime</h1>
+        <p>Explore thousands of anime series and movies</p>
+        
+        <div class="search-container">
+            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            <input type="text" class="search-box" id="searchInput" placeholder="Search anime by title...">
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h2 class="section-title" id="sectionTitle">Popular Anime</h2>
+        <div id="animeGrid" class="anime-grid">
+            <div class="loading">
+                <div class="spinner"></div>
+                Loading anime...
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="animeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img class="modal-backdrop" id="modalBackdrop" src="" alt="">
+                <img class="modal-poster" id="modalPoster" src="" alt="">
+                <button class="close-modal" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <p class="modal-title-en" id="modalTitleEn"></p>
+                
+                <div class="modal-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Score</span>
+                        <span class="stat-value score" id="modalScore">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Type</span>
+                        <span class="stat-value" id="modalType">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Episodes</span>
+                        <span class="stat-value" id="modalEpisodes">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Status</span>
+                        <span class="stat-value" id="modalStatus">-</span>
+                    </div>
+                </div>
+
+                <div class="genres" id="modalGenres"></div>
+
+                <div class="synopsis-section">
+                    <h3 class="synopsis-title">Synopsis</h3>
+                    <p class="synopsis-text" id="modalSynopsis"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
